@@ -1,0 +1,13 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: 
+ =?utf-8?b?0J/QvtC00YLQstC10YDQttC00LXQvdC40LUg0YPRh9C10YLQvdC+0Lkg0LfQsNC/?=
+ =?utf-8?b?0LjRgdC4IHF3ZXJ0eQ==?=
+From: webmaster@localhost
+To: 123@87890-90-0.ru
+Date: Sun, 25 Oct 2020 15:07:03 -0000
+Message-ID: <160363842391.8036.7729732748222323811@DESKTOP-AK66O11.beeline>
+
+Для подтверждения учетной записи qwerty на портале http://localhost:8000 перейдите по ссылке: http://localhost:8000/auth/verify/123@87890-90-0.ru/2c7ea98c57dc1ffff63306f965844091f2f0997d/
+-------------------------------------------------------------------------------

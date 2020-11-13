@@ -1,0 +1,14 @@
+{% load static %}
+
+<div class="mobile-app padding-site">
+    <!-- названия классов вложенных элементов начинаем с названия родительского блока так проще ориентироваться в css -->
+    <div class="mp-text">
+        <p class="mp-tag">mobile app</p>
+        <p class="mp-h2">Find. Follow. Favorite.</p>
+        <!-- Текст из макета: "Seat and back with upholstery made of cold cure foam. Steel frame, available in matt powder-coated black or highly polished chrome." Отображаемый в макете короче, чем скопированный! В конце прилипает комментарий дизайнера. Из параграфа его удалим-->
+        <p class="mp-content">Save your favorites and share your style.</p>
+        <!--кнопки чаще всего имеют единый стиль, поэтому не привязываем название к слайдеру-->
+        <a href="" class="mp-button"><img src="{% static 'img\app-store.png' %}" alt="app-store"></a>
+        <a href="" class="mp-button"><img src="{% static 'img\google-play.png' %}" alt="app-store"></a>
+    </div>
+</div>

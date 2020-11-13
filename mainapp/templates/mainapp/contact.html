@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block menu %}
+    <div class="slider padding-site slider-no-background-image">
+    {% block sub_menu %}
+        {% include 'menu.html' with contact_item_active='menu-link-active' %}
+        {% include 'menu_title.html' with title='Contact Us' %}
+    {% endblock %}
+    </div>
+{% endblock %}
+
+{% block content %}
+    {% include 'contact_location.html' %}
+{% endblock %}

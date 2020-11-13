@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>
+        {% block title  %}
+            {{ title|title }}
+        {% endblock %}
+    </title>
+
+    {% block header %}
+        {% include 'auth_header.html' %}
+    {% endblock %}
+</head>
+<body>
+	<div class="container">
+        <div class="content">
+
+            {% block content %}
+
+            {% endblock %}
+        </div>
+	</div>
+</body>
+</html>

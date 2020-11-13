@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block menu %}
+    <div class="slider padding-site slider-no-background-image">
+    {% block sub_menu %}
+        {% include 'menu.html' with showroom_item_active='menu-link-active' %}
+    {% endblock %}
+    </div>
+{% endblock %}
+
+{% block content %}
+    {% include 'product_items_featured_menu.html' %}
+    {% include 'product_detail.html' %}
+    {% include 'product_related_products.html' %}
+{% endblock %}
+

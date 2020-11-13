@@ -1,0 +1,27 @@
+{% load static %}
+
+<div class="tab-content-2">
+    <ul class="title-controll clearfix">
+        <li class="title-controll-list">Related Products</li>
+    </ul>
+    <ul class="btn-ghost clearfix">
+        <li class="btn-ghost-list"><a href="#" class="btn-ghost-link">explore all</a></li>
+        <li class="btn-ghost-list">
+            <a href="#" class="btn-ghost-link"><img src="{% static 'img\arrow.png' %}" alt=""></a>
+        </li>
+    </ul>
+    <div class="products-content padding-site">
+        {% for same_product in same_products %}
+            <div class="product-2 product-first">
+                <a href="#"><img src="/media/{{ same_product.image_big }}" alt="{{ same_product.name|title }}"></a>
+                <div class="product-2 product-content-hover">
+                    <!--кнопки чаще всего имеют единый стиль, поэтому не привязываем название к слайдеру-->
+                    <a href="" class="icon-hover-2" style="background-image: url({% static 'img/back.svg)' %}"><img src="{% static 'img/arrow.png' %}" alt="forvard"></a>
+                    <p class="hover-name-2">{{ same_product.name|title }}</p>
+                    <p class="hover-details-2">Seat and back with upholstery made of cold cure foam.</p>
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
+</div>

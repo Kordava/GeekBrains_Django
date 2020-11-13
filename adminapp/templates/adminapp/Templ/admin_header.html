@@ -1,0 +1,31 @@
+{% load static %}
+<meta charset="UTF-8">
+<meta name="description" content="выпускной проект сайта на портале https://geekbrains.ru/">
+<meta name="keywords" content="https://geekbrains.ru/, html, css, программирование, обучение">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+{% block css  %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+<!-- Ниже идет поддержка старых версий браузеров, не комментарии! -->
+<!--[if IE 6]>
+    <style type="text/css">
+        * html .group {
+            height: 1%;
+        }
+    </style>
+<![endif]-->
+<!--[if IE 7]>
+    <style type="text/css">
+        *:first-child+html .group {
+            min-height: 1px;
+        }
+    </style>
+<![endif]-->
+<!--[if lt IE 9]>
+    <script src="https:/cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<![endif]-->
+{% block font %}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap" rel="stylesheet">
+{% endblock %}

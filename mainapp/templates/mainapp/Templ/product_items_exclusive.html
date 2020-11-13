@@ -1,0 +1,26 @@
+{% load static %}
+
+<div class="exclusive-product padding-site">
+    <div class="ep-content prd-1" >
+        <div class="ep-text">
+            <p class="ep-tag">exclusive</p>
+            <h2 class="ep-name">Fishnet Chair</h2>
+            <!-- Текст из макета: "Seat and back with upholstery made of cold cure foam. Steel frame, available in matt powder-coated black or highly polished chrome." Отображаемый в макете короче, чем скопированный! В конце прилипает комментарий дизайнера. Из параграфа его удалим-->
+            <p class="ep-details">Seat and back with upholstery made of cold cure foam. Steel frame, available in matt</p>
+            <!--кнопки чаще всего имеют единый стиль, поэтому не привязываем название к слайдеру--><a href="" class="button">Order Us</a> </div>
+    </div>
+    <div class="ep-content prd-2" >
+        <div class="ep-product product-2-sm">
+            <a href="#"><img src="{% static 'img/product-2-sm.png' %}" alt="product-2-sm"></a>
+        </div>
+        <div class="ep-product product-3-sm">
+            <a href="#"><img src="{% static 'img/product-3-sm.png' %}" alt="product-3-sm"></a>
+        </div>
+        <div class="ep-product product-4-sm">
+            <a href="#"><img src="{% static 'img/product-4-sm.png' %}" alt="product-4-sm"></a>
+        </div>
+        <div class="ep-product product-5-sm">
+            <a href="#"><img src="{% static 'img/product-5-sm.png' %}" alt="product-5-sm"></a>
+        </div>
+    </div>
+</div>

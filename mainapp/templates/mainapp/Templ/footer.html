@@ -1,0 +1,51 @@
+{% load static %}
+
+{% block footer  %}
+     <div class="footer padding-site" >
+        <div class="ft-content">
+            <div class="block block1">
+                <p class="contact_us">Contact Us</p>
+                <p class="links1">132A Bridge Road Richmond VIC
+                    <br> Australia.
+                    <br>
+                    <br> Talk to us on 1300 132
+                    <br> info@interior.com</p>
+            </div>
+            <div class="block block2">
+                <p class="useful_information">Useful Information</p>
+                <ul class="block_menu bm1">
+                    <li class="bl-list"><a href="#" class="bl-link">Sales terms</a></li>
+                    <li class="bl-list"><a href="#" class="bl-link">Customer care</a></li>
+                    <li class="bl-list"><a href="#" class="bl-link">Delivery</a></li>
+                </ul>
+                <ul class="block_menu bm2">
+                    <li class="bl-list"><a href="#" class="bl-link">Architect accounts</a></li>
+                    <li class="bl-list"><a href="#" class="bl-link">Careers</a></li>
+                    <li class="bl-list"><a href="#" class="bl-link">Exchanges & returns</a></li>
+                </ul>
+            </div>
+            <div class="block block3">
+                <p class="useful_information">Let’s Stay in Touch!</p>
+                <p class="links2">Suscribe to know about our latest news, products and special offers just for suscribers.</p>
+                <form>
+                    <div class="input" >
+                        <input type="text" placeholder="your email address">
+                        <input type="submit" value="" > </div>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="cp-block block4">
+                <p class="links3">© Copyright - INTERIOR {% now "Y" %}. All Rights Reserved.</p>
+            </div>
+            <div class="cp-block block5"> <img src="{% static 'img/social-links.png' %}" alt=""> </div>
+            <div class="cp-block block6">
+                <ul class="cp-ul">
+                    <li class="cp-list"><a href="#" class="bl-link">Terms & Conditions</a></li>
+                    <li class="cp-list"><pre class="bl-link"> / </pre></li>
+                    <li class="cp-list"><a href="#" class="bl-link">Privacy policy & Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+     </div>
+{% endblock %}

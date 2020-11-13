@@ -1,0 +1,18 @@
+
+<li class="tab-controll-list"><a href="{% url 'products:category' 0 %}"
+        class="tab-controll-link-2
+            {% if request.resolver_match.kwargs.pk == 0 %}
+                    tab-controll-link-active-2
+            {% endif %}
+            {% if request.resolver_match.kwargs.pk == None %}
+                    tab-controll-link-active-2
+            {% endif %}
+        ">Все</a></li>
+{% for category in categories %}
+    <li class="tab-controll-list"><a href="{% url 'products:category' category.pk %}"
+        class="tab-controll-link-2
+            {% if request.resolver_match.kwargs.pk|add:'0' == category.pk %}
+                    tab-controll-link-active-2
+            {% endif %}
+        ">{{ category.name|title }}</a></li>
+{% endfor %}

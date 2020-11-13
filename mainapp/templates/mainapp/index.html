@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block sub_menu  %}
+    {% include 'menu.html' with home_item_active='menu-link-active' %}
+    {% include 'menu_button.html' %}
+    {% include 'menu_pagination.html' %}
+{% endblock %}
+
+{% block content %}
+    {% include 'product_items_featured_content.html' %}
+    {% include 'product_items_promo.html' %}
+    {% include 'product_items_trending.html' %}
+    {% include 'product_items_hot_deals.html' %}
+    {% include 'product_items_exclusive.html' %}
+{% endblock %}
+
+
