@@ -15,12 +15,12 @@ def get_random_product(products):
 
 def get_same_products(hot_product):
     same_products = Product.objects.filter(category=hot_product.category, is_active=True, category__is_active=True).\
-    exclude(pk=hot_product.pk)[:3]
+    exclude(pk=hot_product.pk).select_related('category')[:3]
     return same_products
 
 def main(request, page=1):
     title = 'Главная'
-    products = Product.objects.filter(is_active=True, category__is_active=True)
+    products = Product.objects.filter(is_active=True, category__is_active=True).select_related('category')
     hot_products = get_random_product(products)
     category = {'pk': 0, 'name': 'все'}
 
