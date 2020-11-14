@@ -37,9 +37,9 @@ class OrderList(ListView):
 
 
 class OrderItemsCreate(CreateView):
-   model = Order
-   fields = []
-   success_url = reverse_lazy('ordersapp:orders_list')
+    model = Order
+    fields = []
+    success_url = reverse_lazy('ordersapp:orders_list')
 
     def get_context_data(self, **kwargs):
        data = super(OrderItemsCreate, self).get_context_data(**kwargs)
@@ -70,14 +70,14 @@ class OrderItemsCreate(CreateView):
         return super(ListView, self).dispatch(*args, **kwargs)
 
 
-   def form_valid(self, form):
+    def form_valid(self, form):
        # при сохранении фрмы заказа очищаю корзину данного пользователя
        basket_items = Basket.get_items(self.request.user)
        basket_items.delete()
 
        context = self.get_context_data()
        orderitems = context['orderitems']
-
+    
        with transaction.atomic():
            form.instance.user = self.request.user
            self.object = form.save()
