@@ -77,7 +77,7 @@ class OrderItemsCreate(CreateView):
 
        context = self.get_context_data()
        orderitems = context['orderitems']
-    
+
        with transaction.atomic():
            form.instance.user = self.request.user
            self.object = form.save()
@@ -126,9 +126,6 @@ class OrderItemsUpdate(UpdateView):
 
        return super(OrderItemsUpdate, self).form_valid(form)
 
-    @method_decorator(login_required())
-    def dispatch(self, *args, **kwargs):
-        return super(ListView, self).dispatch(*args, **kwargs)
 
 
 class OrderDelete(DeleteView):
