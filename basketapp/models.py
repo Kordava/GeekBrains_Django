@@ -34,6 +34,6 @@ class Basket(models.Model):
 
     @cached_property
     def get_items_cached(self):
-        return Basket.objects.filter(user=self.user).order_by('product__category').select_related()
+        return self.user.basket.select_related()
 
 
