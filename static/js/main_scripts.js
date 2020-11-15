@@ -1,4 +1,4 @@
-$( document ).on( 'click', '.paginator a', function(event) {
+$('.paginator').on( 'click', 'a', function(event) {
    if (event.target.hasAttribute('href')) {
        var link = event.target.href + 'ajax/';
        var link_array = link.split('/');
