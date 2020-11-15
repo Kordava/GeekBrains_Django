@@ -21,7 +21,7 @@ app_name = 'mainapp'
 urlpatterns = [
     path('', mainapp.products, name='index'),
     path('category/<int:pk>/', mainapp.products, name='category'),
-    path('category/<int:pk>/page/<int:page>', mainapp.products, name='page'),
+    path('category/<int:pk>/page/<int:page>/ajax', mainapp.products_ajax, name='page'),
     path('product/<int:pk>/', mainapp.product_detail, name='product'),
 ]
 
