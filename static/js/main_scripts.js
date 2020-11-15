@@ -1,4 +1,4 @@
-$( document ).on( 'click', '.paginator a', function(event) {
+$( document ).on( 'click', '.tab-content a', function(event) {
    if (event.target.hasAttribute('href')) {
        var link = event.target.href + 'ajax/';
        var link_array = link.split('/');
@@ -6,7 +6,7 @@ $( document ).on( 'click', '.paginator a', function(event) {
            $.ajax({
                url: link,
                success: function (data) {
-                   $('.paginator').html(data.result);
+                   $('.tab-content').html(data.result);
                },
            });
 
