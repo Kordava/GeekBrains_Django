@@ -12,6 +12,8 @@ import random
 
 from django.conf import settings
 from django.core.cache import cache
+from django.views.decorators.cache import cache_page
+
 
 # Create your views here.
 
@@ -130,7 +132,7 @@ def contact(request):
     }
     return render(request, 'mainapp/contact.html', content)
 
-
+@cache_page(3600)
 def products(request, pk=None, page=1):
     title = 'Продукты'
     products = get_products_orederd_by_price()
