@@ -22,7 +22,7 @@ urlpatterns = [
     path('', mainapp.products, name='index'),
     path('category/<int:pk>/', mainapp.products, name='category'),
     path('category/<int:pk>/page/<int:page>/', mainapp.products, name='page'),
-    path('category/<int:pk>/page/<int:page>/ajax/', mainapp.products_ajax),
+    path('category/<int:pk>/page/<int:page>/ajax/', cache_page(3600)(mainapp.products_ajax)),
     path('product/<int:pk>/', mainapp.product_detail, name='product'),
 ]
 
