@@ -99,6 +99,17 @@ class ProductCategoryUpdateView(UpdateView):
 
         return context
 
+   def form_valid(self, form):
+       if 'discount' in form.cleaned_data:
+           discount = form.cleaned_data['discount']
+           if discount:
+               self.object.product_set.\
+                    update(price=F('price') * (1 - discount / 100))
+               db_profile_by_type(self.__class__, 'UPDATE',\
+                                  connection.queries)
+
+       return super().form_valid(form)
+
 class UserUpdateView(UpdateView):
     model = ShopUser
     template_name = 'adminapp/user_update.html'
