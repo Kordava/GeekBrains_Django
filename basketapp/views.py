@@ -62,8 +62,8 @@ def basket_add(request, pk):
     if not basket:
         basket = Basket(user=request.user, product=product)
 
-    basket.quantity = F('quantity') + 1
-    #basket.quantity += 1
+    #basket.quantity = F('quantity') + 1
+    basket.quantity += 1
     basket.save()
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
