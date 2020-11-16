@@ -6,7 +6,7 @@ from django.core.management import call_command
 class TestMainappSmoke(TestCase):
    def setUp(self):
         call_command('flush', '--noinput')
-        call_command('loaddata', 'test_db.json')
+        #call_command('loaddata', 'test_db.json')
         self.client = Client()
 
    def test_mainapp_urls(self):
