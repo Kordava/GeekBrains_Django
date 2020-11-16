@@ -8,7 +8,7 @@ from django.conf import settings
 class TestUserManagement(TestCase):
    def setUp(self):
        call_command('flush', '--noinput')
-       call_command('loaddata', 'test_db.json')
+       #call_command('loaddata', 'test_db.json')
        self.client = Client()
 
        self.superuser = ShopUser.objects.create_superuser('django2', \
