@@ -6,6 +6,9 @@ from adminapp.views import db_profile_by_type
 from django.db.models import F, When, Case, DecimalField, IntegerField
 from datetime import timedelta
 
+from ordersapp.models import OrderItem
+
+
 class Command(BaseCommand):
 #   def handle(self, *args, **options):
 #       test_products = Product.objects.filter(
