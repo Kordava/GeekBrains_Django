@@ -171,7 +171,6 @@ def products(request, pk=None, page=1):
 
 def products_ajax(request, pk=None, page=1):
    if request.is_ajax():
-       print('Я тут')
        links_menu = get_links_menu()
 
        if pk:
