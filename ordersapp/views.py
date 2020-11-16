@@ -66,9 +66,9 @@ class OrderItemsCreate(CreateView):
        data['orderitems'] = formset
        return data
 
-    @method_decorator(login_required())
-    def dispatch(self, *args, **kwargs):
-        return super(ListView, self).dispatch(*args, **kwargs)
+    #@method_decorator(login_required())
+    #def dispatch(self, *args, **kwargs):
+     #   return super(ListView, self).dispatch(*args, **kwargs)
 
 
     def form_valid(self, form):
