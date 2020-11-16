@@ -134,9 +134,9 @@ class OrderDelete(DeleteView):
     success_url = reverse_lazy('ordersapp:orders_list')
 
 
-    @method_decorator(login_required())
-    def dispatch(self, *args, **kwargs):
-        return super(ListView, self).dispatch(*args, **kwargs)
+    #@method_decorator(login_required())
+    #def dispatch(self, *args, **kwargs):
+    #    return super(ListView, self).dispatch(*args, **kwargs)
 
 
 class OrderRead(DetailView):
