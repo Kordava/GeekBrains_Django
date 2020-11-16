@@ -39,7 +39,7 @@ class TestUserManagement(TestCase):
 
        # главная после логина
        response = self.client.get('/')
-       self.assertContains(response, 'Пользователь', status_code=200)
+       self.assertContains(response, 'User', status_code=200)
        self.assertEqual(response.context['user'], self.user)
        # self.assertIn('Пользователь', response.content.decode())
 
