@@ -207,6 +207,44 @@ def products_ajax(request, pk=None, page=1):
 
        return JsonResponse({'result': result})
 
+def products_ajax_2(request, pk=None, page=1):
+   if request.is_ajax():
+       title = 'Продукты'
+       products = get_products_orederd_by_price()
+       links_menu = get_links_menu()
+       category = {'pk': 0, 'name': 'все'}
+
+       if pk is not None:
+           if int(pk) == 0:
+               products = get_products_orederd_by_price()
+
+           else:
+               category = get_category(int(pk))
+               products = get_products_in_category_orederd_by_price(int(pk))
+
+       hot_products = get_random_product(products)
+
+       paginator = Paginator(hot_products, 6)
+       try:
+           products_paginator = paginator.page(page)
+       except PageNotAnInteger:
+           products_paginator = paginator.page(1)
+       except EmptyPage:
+           products_paginator = paginator.page(paginator.num_pages)
+
+       content = {
+           'title': title,
+           'categories': links_menu,
+           'category': category,
+           'hot_products': products_paginator,
+       }
+       result = render_to_string(
+                    'mainapp/Templ/product_tab_content_type_main_data_2.html',
+                    context=content,
+                    request=request)
+
+       return JsonResponse({'result': result})
+
 def product_detail(request, pk=None):
     title = 'Подробно'
     links_menu = get_links_menu()
