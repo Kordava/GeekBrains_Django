@@ -202,6 +202,7 @@ def products_ajax(request, pk=None, page=1):
                         'mainapp/Templ/product_tab_content_type_main.html',
                         context=content,
                         request=request)
+           print(result)
 
            return JsonResponse({'result': result})
 
