@@ -1,3 +1,5 @@
+{% load static %}
+
 <div class="paginator">
   {% if hot_products.has_previous %}
     <a href="{% url 'products:page' category.pk hot_products.previous_page_number %}">
