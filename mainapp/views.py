@@ -186,7 +186,7 @@ def products_ajax(request, pk=None, page=1):
 
        hot_products = get_random_product(products)
 
-       paginator = Paginator(hot_products, 6)
+       paginator = Paginator(hot_products, 4)
        try:
            products_paginator = paginator.page(page)
        except PageNotAnInteger:
