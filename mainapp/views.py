@@ -181,8 +181,8 @@ def products_ajax(request, pk=None, page=1):
                products = get_products_orederd_by_price()
 
            else:
-               category = get_category(pk)
-               products = get_products_in_category_orederd_by_price(pk)
+               category = get_category(int(pk))
+               products = get_products_in_category_orederd_by_price(int(pk))
 
        hot_products = get_random_product(products)
 
@@ -201,7 +201,7 @@ def products_ajax(request, pk=None, page=1):
            'hot_products': products_paginator,
        }
        result = render_to_string(
-                    'mainapp/Templ/product_tab_content_type_main.html',
+                    'mainapp/Templ/product_tab_content_type_main_data.html',
                     context=content,
                     request=request)
 

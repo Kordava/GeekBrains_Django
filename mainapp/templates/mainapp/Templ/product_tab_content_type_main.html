@@ -1,32 +1,5 @@
 {% load static %}
 
-<div class="paginator">
-  {% if hot_products.has_previous %}
-    <a href="{% url 'products:page' category.pk hot_products.previous_page_number %}">
-      <
-    </a>
-  {% endif %}
-  <span class="current">
-    страница {{ hot_products.number }} из
-    {{ hot_products.paginator.num_pages }}
-  </span>
-  {% if hot_products.has_next %}
-    <a href="{% url 'products:page' category.pk hot_products.next_page_number %}">
-      >
-    </a>
-  {% endif %}
+<div class="tab-content">
+    {% include 'product_tab_content_type_main_data.html' %}
 </div>
-
-{% for hot_product in hot_products %}
-    <div class="{{content_style}} product-first">
-        <a href=""><img src="/media/{% if image_size == 'small' %}{{ hot_product.image_small }}{% else %}{{ hot_product.image_big }}{% endif %}" alt="{{ hot_product.name|title }}"></a>
-
-        <div class="{{content_style}} product-content-hover" >
-            <!--кнопки чаще всего имеют единый стиль, поэтому не привязываем название к слайдеру-->
-            <a href="{% url 'products:product' hot_product.pk %}" class="{{icon_hover_style}}"><img src="{% static 'img\arrow.png' %}" alt="forvard"></a>
-            <p class="{{hover_name_style}}">{{ hot_product.name|title }}</p>
-            <p class="{{hover_details_style}}">Seat and back with upholstery made of cold cure foam.</p>
-        </div>
-    </div>
-{% endfor %}
-
