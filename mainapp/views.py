@@ -177,7 +177,7 @@ def products_ajax(request, pk=None, page=1):
        category = {'pk': 0, 'name': 'все'}
 
        if pk is not None:
-           if pk == 0:
+           if int(pk) == 0:
                products = get_products_orederd_by_price()
 
            else:
