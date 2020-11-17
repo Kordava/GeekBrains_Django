@@ -181,8 +181,7 @@ def products_ajax(request, pk=None, page=1):
                products = get_products_orederd_by_price()
 
            else:
-               print(pk)
-               category = get_object_or_404(ProductCategory, pk=pk)
+               category = get_category(pk)
                products = get_products_in_category_orederd_by_price(pk)
 
        hot_products = get_random_product(products)
