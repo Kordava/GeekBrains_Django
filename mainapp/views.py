@@ -171,40 +171,41 @@ def products(request, pk=None, page=1):
 
 def products_ajax(request, pk=None, page=1):
    if request.is_ajax():
+       title = 'Продукты'
+       products = get_products_orederd_by_price()
        links_menu = get_links_menu()
+       category = {'pk': 0, 'name': 'все'}
 
-       if pk:
-           if pk == '0':
-               category = {
-                   'pk': 0,
-                   'name': 'все'
-               }
+       if pk is not None:
+           if pk == 0:
                products = get_products_orederd_by_price()
+
            else:
-               category = get_category(pk)
+               category = get_object_or_404(ProductCategory, pk=pk)
                products = get_products_in_category_orederd_by_price(pk)
 
-           paginator = Paginator(products, 2)
-           try:
-               products_paginator = paginator.page(page)
-           except PageNotAnInteger:
-               products_paginator = paginator.page(1)
-           except EmptyPage:
-               products_paginator = paginator.page(paginator.num_pages)
+       hot_products = get_random_product(products)
 
-           content = {
-               'links_menu': links_menu,
-               'category': category,
-               'products': products_paginator,
-           }
+       paginator = Paginator(hot_products, 6)
+       try:
+           products_paginator = paginator.page(page)
+       except PageNotAnInteger:
+           products_paginator = paginator.page(1)
+       except EmptyPage:
+           products_paginator = paginator.page(paginator.num_pages)
 
-           result = render_to_string(
-                        'mainapp/Templ/product_tab_content_type_main.html',
-                        context=content,
-                        request=request)
-           print(result)
+       content = {
+           'title': title,
+           'categories': links_menu,
+           'category': category,
+           'hot_products': products_paginator,
+       }
+       result = render_to_string(
+                    'mainapp/Templ/product_tab_content_type_main.html',
+                    context=content,
+                    request=request)
 
-           return JsonResponse({'result': result})
+       return JsonResponse({'result': result})
 
 def product_detail(request, pk=None):
     title = 'Подробно'
