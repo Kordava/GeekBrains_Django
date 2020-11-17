@@ -18,14 +18,14 @@
 </div>
 
 {% for hot_product in hot_products %}
-    <div class="product product-first">
-        <a href=""><img src="/media/{{ hot_product.image_small }}" alt="{{ hot_product.name|title }}"></a>
+    <div class="product-2 product-first">
+        <a href=""><img src="/media/{{ hot_product.image_big }}" alt="{{ hot_product.name|title }}"></a>
 
-        <div class="product product-content-hover" >
+        <div class="product-2 product-content-hover" >
             <!--кнопки чаще всего имеют единый стиль, поэтому не привязываем название к слайдеру-->
-            <a href="{% url 'products:product' hot_product.pk %}" class="icon-hover"><img src="{% static 'img\arrow.png' %}" alt="forvard"></a>
-            <p class="hover-name">{{ hot_product.name|title }}</p>
-            <p class="hover-details">Seat and back with upholstery made of cold cure foam.</p>
+            <a href="{% url 'products:product' hot_product.pk %}" class="icon-hover-2"><img src="{% static 'img\arrow.png' %}" alt="forvard"></a>
+            <p class="hover-name-2">{{ hot_product.name|title }}</p>
+            <p class="hover-details-2">Seat and back with upholstery made of cold cure foam.</p>
         </div>
     </div>
 {% endfor %}

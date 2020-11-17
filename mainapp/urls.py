@@ -22,7 +22,8 @@ urlpatterns = [
     path('', mainapp.products, name='index'),
     path('category/<int:pk>/', mainapp.products, name='category'),
     path('category/<int:pk>/page/<int:page>/', mainapp.products, name='page'),
-    re_path(r'^category/(?P<pk>\d+)/page/(?P<page>\d+)/ajax/$', mainapp.products_ajax),
+    re_path(r'^category/(?P<pk>\d+)/page/(?P<page>\d+)/ajaxM/$', mainapp.products_ajax),
+    re_path(r'^category/(?P<pk>\d+)/page/(?P<page>\d+)/ajaxP/$', mainapp.products_ajax),
 
     #path('category/<int:pk>/page/<int:page>/ajax/', mainapp.products_ajax),
     path('product/<int:pk>/', mainapp.product_detail, name='product'),
