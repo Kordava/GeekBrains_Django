@@ -199,7 +199,7 @@ def products_ajax(request, pk=None, page=1):
            }
 
            result = render_to_string(
-                        'mainapp/Templ/product_tab_content_type_2.html',
+                        'mainapp/Templ/product_tab_content_type_main.html',
                         context=content,
                         request=request)
 
